@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#contact {
+    background-color: #fff;
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact label {
+    align-self: flex-start;
+    font-size: 16px;
+    color: #555;
+    margin-top: 15px;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+#contact input:focus, #contact textarea:focus {
+    border-color: #ff6f61;
+}
+
+#contact textarea {
+    resize: vertical;
+}
+
+#contact button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #e85c50;
+}
+
+#contact input::placeholder, #contact textarea::placeholder {
+    color: #aaa;
+}
+
+@media (max-width: 480px) {
+    #contact {
+        padding: 20px;
+    }
+    
+    #contact h2 {
+        font-size: 24px;
+    }
+    
+    #contact input, #contact textarea {
+        font-size: 14px;
+    }
+    
+    #contact button {
+        font-size: 16px;
+    }
+}

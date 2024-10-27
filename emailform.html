@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="styleform.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+       emailjs.init("service_qj0r96g");
+   })();
+</script>
+
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="styleform.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("service_qj0r96g");
+        })();
+    </script>
+</head>
+<body>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Email</button>
+        </form>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.querySelector("form");
+
+            contactForm.addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent form from refreshing the page
+
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const message = document.getElementById("message").value;
+
+                // Prepare the email parameters
+                const templateParams = {
+                    from_name: name,
+                    from_email: email,
+                    message: message
+                };
+
+                // Send email using EmailJS
+                emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+                .then(function(response) {
+                    alert("Your message has been sent successfully!", response.status, response.text);
+                    contactForm.reset(); // Reset form fields after successful submission
+                }, function(error) {
+                    alert("Failed to send your message. Please try again.", error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+        
+</body>
+</html>
